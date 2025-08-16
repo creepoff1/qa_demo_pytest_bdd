@@ -1,81 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="ReqRes API" errors="0" failures="0" skipped="0" tests="16" time="7.925" timestamp="2025-08-16T12:20:02.801915" hostname="Olegs-MacBook-Pro.local"><testcase classname="tests.steps.test_common_steps" name="test_register_successful" time="0.659"><system-out>--------------------------------- Captured Out ---------------------------------
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="ReqRes API" errors="0" failures="0" skipped="0" tests="16" time="7.975" timestamp="2025-08-16T12:30:13.771997" hostname="Olegs-MacBook-Pro.local"><testcase classname="tests.steps.test_common_steps" name="test_register_successful" time="0.607"><system-out>--------------------------------- Captured Out ---------------------------------
 [Auth endpoints - Register successful] ✔ When I POST "/api/register" with json:
 | email    | eve.holt@reqres.in |
 | password | pistol             |
 [Auth endpoints - Register successful] ✔ Then the response status code should be 200
 [Auth endpoints - Register successful] ✔ And the response should match the schema "register_success_schema.json"
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_register_missing_password__400" time="0.365"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_register_missing_password__400" time="0.266"><system-out>--------------------------------- Captured Out ---------------------------------
 [Auth endpoints - Register missing password -&gt; 400] ✔ When I POST "/api/register" with json:
 | email | sydney@fife |
 [Auth endpoints - Register missing password -&gt; 400] ✔ Then the response status code should be 400
 [Auth endpoints - Register missing password -&gt; 400] ✔ And the response should match the schema "register_error_schema.json"
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_login_successful" time="0.306"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_login_successful" time="0.310"><system-out>--------------------------------- Captured Out ---------------------------------
 [Auth endpoints - Login successful] ✔ When I POST "/api/login" with json:
 | email | eve.holt@reqres.in |
 | password | cityslicka      |
 [Auth endpoints - Login successful] ✔ Then the response status code should be 200
 [Auth endpoints - Login successful] ✔ And the response should match the schema "login_success_schema.json"
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_login_missing_password__400" time="0.333"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_login_missing_password__400" time="0.369"><system-out>--------------------------------- Captured Out ---------------------------------
 [Auth endpoints - Login missing password -&gt; 400] ✔ When I POST "/api/login" with json:
 | email | peter@klaven |
 [Auth endpoints - Login missing password -&gt; 400] ✔ Then the response status code should be 400
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_create_user" time="0.314"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_create_user" time="0.321"><system-out>--------------------------------- Captured Out ---------------------------------
 [Create/Update/Delete user - Create user] ✔ When I POST "/api/users" with json:
 | name | morpheus |
 | job  | leader   |
 [Create/Update/Delete user - Create user] ✔ Then the response status code should be 201
 [Create/Update/Delete user - Create user] ✔ And the response should match the schema "create_user_schema.json"
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_full_update_user_put" time="0.298"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_full_update_user_put" time="0.317"><system-out>--------------------------------- Captured Out ---------------------------------
 [Create/Update/Delete user - Full update user (PUT)] ✔ When I PUT "/api/users/2" with json:
 | name | morpheus        |
 | job  | zion resident   |
 [Create/Update/Delete user - Full update user (PUT)] ✔ Then the response status code should be 200
 [Create/Update/Delete user - Full update user (PUT)] ✔ And the response should match the schema "update_user_schema.json"
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_partial_update_user_patch" time="0.340"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_partial_update_user_patch" time="0.311"><system-out>--------------------------------- Captured Out ---------------------------------
 [Create/Update/Delete user - Partial update user (PATCH)] ✔ When I PATCH "/api/users/2" with json:
 | job  | architect   |
 [Create/Update/Delete user - Partial update user (PATCH)] ✔ Then the response status code should be 200
 [Create/Update/Delete user - Partial update user (PATCH)] ✔ And the response should match the schema "update_user_schema.json"
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_delete_user" time="0.242"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_delete_user" time="0.274"><system-out>--------------------------------- Captured Out ---------------------------------
 [Create/Update/Delete user - Delete user] ✔ When I DELETE "/api/users/2"
 [Create/Update/Delete user - Delete user] ✔ Then the response status code should be 204
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_resource_list" time="0.193"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_resource_list" time="0.184"><system-out>--------------------------------- Captured Out ---------------------------------
 [Resources (unknown) - Get resource list] ✔ When I GET "/api/unknown"
 [Resources (unknown) - Get resource list] ✔ Then the response status code should be 200
 [Resources (unknown) - Get resource list] ✔ And the response should match the schema "resource_list_schema.json"
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_single_resource_id2" time="0.196"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_single_resource_id2" time="0.190"><system-out>--------------------------------- Captured Out ---------------------------------
 [Resources (unknown) - Get single resource (id=2)] ✔ When I GET "/api/unknown/2"
 [Resources (unknown) - Get single resource (id=2)] ✔ Then the response status code should be 200
 [Resources (unknown) - Get single resource (id=2)] ✔ And the response should match the schema "resource_single_schema.json"
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_missing_resource_id23__404" time="0.271"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_missing_resource_id23__404" time="0.346"><system-out>--------------------------------- Captured Out ---------------------------------
 [Resources (unknown) - Get missing resource (id=23) -&gt; 404] ✔ When I GET "/api/unknown/23"
 [Resources (unknown) - Get missing resource (id=23) -&gt; 404] ✔ Then the response status code should be 404
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_users_list_returns_200_and_valid_payload[1]" time="0.230"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_users_list_returns_200_and_valid_payload[1]" time="0.232"><system-out>--------------------------------- Captured Out ---------------------------------
 [Users endpoints - Get users list returns 200 and valid payload] ✔ When I GET "/api/users" with query params:
 | page | 1 |
 [Users endpoints - Get users list returns 200 and valid payload] ✔ Then the response status code should be 200
 [Users endpoints - Get users list returns 200 and valid payload] ✔ And the response should match the schema "users_list_schema.json"
 [Users endpoints - Get users list returns 200 and valid payload] ✔ And the field "data" should be an array with at least 1 item
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_users_list_returns_200_and_valid_payload[2]" time="0.234"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_users_list_returns_200_and_valid_payload[2]" time="0.213"><system-out>--------------------------------- Captured Out ---------------------------------
 [Users endpoints - Get users list returns 200 and valid payload] ✔ When I GET "/api/users" with query params:
 | page | 2 |
 [Users endpoints - Get users list returns 200 and valid payload] ✔ Then the response status code should be 200
 [Users endpoints - Get users list returns 200 and valid payload] ✔ And the response should match the schema "users_list_schema.json"
 [Users endpoints - Get users list returns 200 and valid payload] ✔ And the field "data" should be an array with at least 1 item
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_single_existing_user_id2" time="0.211"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_get_single_existing_user_id2" time="0.208"><system-out>--------------------------------- Captured Out ---------------------------------
 [Users endpoints - Get single existing user (id=2)] ✔ When I GET "/api/users/2"
 [Users endpoints - Get single existing user (id=2)] ✔ Then the response status code should be 200
 [Users endpoints - Get single existing user (id=2)] ✔ And the response should match the schema "user_single_schema.json"
@@ -84,7 +84,7 @@
 [Users endpoints - Get single missing user (id=23) -&gt; 404] ✔ When I GET "/api/users/23"
 [Users endpoints - Get single missing user (id=23) -&gt; 404] ✔ Then the response status code should be 404
 
-</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_delayed_response_3s" time="3.350"><system-out>--------------------------------- Captured Out ---------------------------------
+</system-out></testcase><testcase classname="tests.steps.test_common_steps" name="test_delayed_response_3s" time="3.444"><system-out>--------------------------------- Captured Out ---------------------------------
 [Users endpoints - Delayed response (3s)] ✔ When I GET "/api/users" with query params:
 | delay | 3 |
 [Users endpoints - Delayed response (3s)] ✔ Then the response status code should be 200
