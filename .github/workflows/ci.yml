@@ -51,7 +51,7 @@ jobs:
         pytest -v -n auto --html=reports/report_parallel.html --self-contained-html --junit-xml=reports/junit_parallel.xml
     
     - name: Upload test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: test-results-${{ matrix.python-version }}
@@ -82,7 +82,7 @@ jobs:
         docker run --rm -v $(pwd)/reports:/app/reports -v $(pwd)/logs:/app/logs qa-portfolio:latest
     
     - name: Upload Docker test results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: docker-test-results
@@ -114,7 +114,7 @@ jobs:
       run: safety check --json --output reports/safety-report.json || true
     
     - name: Upload security reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: security-reports
