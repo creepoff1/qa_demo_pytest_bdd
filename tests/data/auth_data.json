@@ -1,0 +1,26 @@
+{
+  "valid_users": [
+    {
+      "email": "eve.holt@reqres.in",
+      "password": "pistol",
+      "expected_token": "QpwL5tke4Pnpja7X4"
+    },
+    {
+      "email": "eve.holt@reqres.in", 
+      "password": "cityslicka",
+      "expected_token": "QpwL5tke4Pnpja7X4"
+    }
+  ],
+  "invalid_users": [
+    {
+      "email": "sydney@fife",
+      "password": null,
+      "expected_error": "Missing password"
+    },
+    {
+      "email": "peter@klaven",
+      "password": null,
+      "expected_error": "Missing password"
+    }
+  ]
+}

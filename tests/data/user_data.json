@@ -1,0 +1,17 @@
+{
+  "create_user": {
+    "name": "morpheus",
+    "job": "leader"
+  },
+  "update_user": {
+    "name": "morpheus",
+    "job": "zion resident"
+  },
+  "patch_user": {
+    "job": "architect"
+  },
+  "existing_user_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "non_existing_user_ids": [23, 99, 999],
+  "valid_pages": [1, 2],
+  "delay_times": [3, 5]
+}

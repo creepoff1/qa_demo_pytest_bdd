@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  qa-tests:
+    build: .
+    container_name: qa-portfolio-tests
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    environment:
+      - BASE_URL=https://reqres.in
+      - TIMEOUT=30
+      - RETRY_COUNT=3
+      - PARALLEL_WORKERS=4
+      - LOG_LEVEL=INFO
+    command: ["pytest", "-v", "--html=reports/report.html", "--self-contained-html", "--junit-xml=reports/junit.xml"]
+    
+  qa-tests-parallel:
+    build: .
+    container_name: qa-portfolio-tests-parallel
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    environment:
+      - BASE_URL=https://reqres.in
+      - TIMEOUT=30
+      - RETRY_COUNT=3
+      - PARALLEL_WORKERS=4
+      - LOG_LEVEL=INFO
+    command: ["pytest", "-v", "-n", "auto", "--html=reports/report_parallel.html", "--self-contained-html", "--junit-xml=reports/junit_parallel.xml"]
